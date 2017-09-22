@@ -1,0 +1,45 @@
+*{margin: 0;padding: 0;font-weight: normal;}
+header{height: 2.5rem;}
+	.top{height: 1.2rem;background-color:#ffdb2c;text-align: center;}
+	#logo{ height: 1.2rem;width: 1.2rem;}
+	#search{width: 0.5rem;height: 0.5rem;}
+	.top p{line-height: 1.27rem;float: right;margin: 0 0.3rem 0.27rem 0;}
+	.nav{height: 1.8rem;}
+	.nav ul{}
+	.nav ul li{display: inline-block;font-size: 0.5rem;font-weight: lighter;
+				margin: 0 0.5rem 0 0.5rem; }
+		.special{border-bottom: 0.04rem solid #ffdb2c ;}
+.banner{width: 100%;color: rgba(0,0,0,0.3);}
+.banner img{height:4rem;width: 100%;}
+.main{clear: both;}
+.hot{height: 2rem;text-align: center;background: url(../img/bg.png)no-repeat;
+		background-size: 90%;background-position:center top;}
+.hot p{font-size: 0.4rem;}
+.item{margin: 0.2rem 0 0 0.8rem;float: left;
+		width: 4.29em;height: 3.21em;}
+.itempic{width: 4.29em;height: 3.21em;}
+.word{background:rgba(0,0,0,0.3);height: 1.2rem;position: relative;top: 1.88rem;
+		width: 4.29rem;clear: both;}
+.word p{font-size: 0.3rem;text-align: center;position: relative;top: 0.2rem;
+			color: #fff;}
+.star{width: 0.8rem;height: 0.8rem;position: relative;left: 3.2rem;bottom: 0.1rem;}
+.bg1{background: url(../img/img1.png)no-repeat;background-position: center;
+		background-size:100%;}
+.bg2{background: url(../img/img2.png)no-repeat;background-position: center;
+		background-size:100%;}
+.bg3{background: url(../img/img3.png)no-repeat;background-position: center;
+		background-size:100%;}
+.bg4{background: url(../img/img4.png)no-repeat;background-position: center;
+		background-size:100%;}
+.bg5{background: url(../img/img5.png)no-repeat;background-position: center;
+		background-size:100%;}
+.bg6{background: url(../img/img6.png)no-repeat;background-position: center;
+		background-size:100%;}
+
+
+footer{height: 2rem;width: 100%; background-color: #fff;position: fixed;bottom: 0;}
+.menu{float: left;margin:  0 0.2rem 0 0.9rem;}
+.menu p{font-size: 0.4rem;}
+.botpic{height: 0.7rem;}
+.middlepic{height: 1.2rem;margin: 0.4rem 0 0 0;}
+.special{color: #ffdb2c;}
