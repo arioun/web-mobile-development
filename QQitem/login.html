@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<meta name="viewport" content="width = device-width,initial-scale=1"/>
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+		<script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<style type="text/css">
+			#logo{text-align: center;}
+			#login{background-color: #5c98f8;}
+			
+		</style>
+	</head>
+	<body>
+		<div data-role = "content">
+			<div id="logo"><img src="img/QQlogo.png" alt="QQ"/></div>
+			
+			<form method="post" action="demoform.asp">
+				<label for="userID">账号：</label>
+				<input type="text" name="userID" id="userID"/>
+				<label for="password">密码：</label>
+				<input type="password" name="password" id="password" />
+				<input type="button" id="login" value="登录"/>
+			</form>
+		</div>
+		<script type="text/javascript">
+			var id = $('#userID').val();
+			var pwd = $('#password').val();
+			$('#login').click(function(){
+				$.ajax({
+				type:"get",
+				url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+				data:{status:'login',userID:id,password:pwd},
+				dataType:'json',
+				success:function(data){
+					if(data == 0){
+					alert('昵称不存在');
+				}
+				else if(data == 2){
+					alert('密码错误');
+				}
+				else{
+					alert('登录成功');
+					$(location).attr('href', 'message.html');
+				}
+				}
+			});
+			})
+		</script>
+	</body>
+</html>
