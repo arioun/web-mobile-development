@@ -4,17 +4,29 @@
 		<meta charset="UTF-8">
 		<title>signup</title>
 		<meta name="viewport" content="width = device-width,initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
-		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="css/open.css"/>
-		<script src="js/jquery-2.2.2.js"></script>
-		<script src="js/swiper-3.4.2.min.js"></script>
-		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			a{text-decoration: none;color: #000000;}
+			ul li{list-style: none;}
+			body{padding:1.5rem}
+			#head{height:3.5rem; border-bottom: 0.01rem #aaaaaa solid;margin:0 -1.5rem 0 -1.5rem;}
+			.back{padding-left: 1.5rem;}
+			.backimg{width: 2rem;height: 2rem;}
+			.right{position: fixed;right: 2rem;top: 1.9rem;font-size: large;}
+			h2{text-align: center; margin: -3rem 0 0 0;}
+			#content{padding: 1.5rem;}
+			.logo{text-align: center;margin: 1rem 0 4rem 0;}
+			.logo img{width: 9rem;height: 9rem;}
+			.logsin a{margin-bottom: 2rem;}
+		</style>
 	</head>
 	<body>
 		<header id="head">
-				<a href="#"class="btn back"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
-				<h1>注册</h1>
+				<a href="open.html"class="btn back"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
+				<h2>注册</h2>
 				<a href="#" class="right">帮助</a>
 			</header>
 			<content id='content'>
@@ -24,13 +36,66 @@
 				<div class="form-group">
     				<label class="sr-only" for="fname">用户名</label>
     				<input type="text" class="form-control" id="fname" placeholder="请输入用户名">
+    				<p id="uidtest"></p>
   				</div>
 				<div class="form-group">
 					<label class="sr-only" for="pwd">密码</label>
     				<input type="password" class="form-control" id="pwd" placeholder="请输入密码">
 				</div>
 				
-				<a href="#" class="btn btn-warning btn-lg btn-block"role="button">登录</a>
+				<a href="#" class="btn btn-warning btn-lg btn-block"role="button"id="buton">登录</a>
 			</content>
 	</body>
+	<script type="text/javascript">
+		$('#fname').blur(function(){
+			var uid = $('#fname').val();
+				$.ajax({
+				type:"get",
+				url:"http://datainfo.duapp.com/shopdata/getuser.php",
+				data:{userID:uid},
+				dataType:'jsonp',
+				success:function(data){
+					if(data == 0)
+					{
+						$('#uidtest').html('用户名可用');
+					}
+					
+					else
+					{
+						$('#uidtest').html('用户名不可用');
+					}			
+				}
+			});
+		})
+		$('#fname').focus(function(){
+			$('#uidtest').html('');
+		})
+		$('#buton').click(function(){
+				var uid = $('#fname').val();
+				var pwd = $('#pwd').val();
+				$.ajax({
+				type:"get",
+				url:"https://datainfo.duapp.com/shopdata/userinfo.php",
+				data:{status:'register',userID:uid,password:pwd},
+				dataType:'json',
+				success:function(data){
+					
+					if(data==1)
+					{
+						alert('注册成功');
+						$(location).attr('href','login.html');
+					}
+					else if(data == 0)
+					{
+						$('#uidtest').html('用户名重复');
+					}
+					
+					else if(data == 2)
+					{
+						alert('数据库报错');
+					}			
+				}
+			});
+			})
+	</script>
 </html>

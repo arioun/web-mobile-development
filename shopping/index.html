@@ -2,31 +2,109 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>shopping</title>
-		<meta name="viewport" content="width = device-width,initial-scale=2"/>
-		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
-		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/shopping.css"/>
-		<script src="js/jquery-2.2.2.js"></script>
-		<script src="js/jquery.mobile-1.4.5.min.js"></script>
-		<script src="js/swiper-3.4.2.min.js"></script>
-		
+		<title>index</title>
+		<meta name="viewport" content="width = device-width,initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div data-role = "page"id="pageone">
-			<header data-role="header"data-position = "fixed"id="head">
-				<a href=""></a>
-				
+			<header id="head">
+				<a href="#"id="left"><img src="img/scan.png"></a>
+				<div class="input-append col-xs-7"id="srch">
+					<input type="text" results='s' class="span2 input-sm"id="srcinf" value="">
+				</div>
+				<a href="#"id="right"><img src="img/qr_code.png"></a>
 			</header>
-			
-			<content data-role = "content" id='content'>
-			
+			<content>
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide"><img src="img/s1.jpg"/></div>
+				    <div class="swiper-slide"><img src="img/s2.jpg"/></div>
+				    <div class="swiper-slide"><img src="img/s3.jpg"/></div>
+				    <div class="swiper-slide"><img src="img/s4.jpg"/></div>
+				    <div class="swiper-slide"><img src="img/s5.jpg"/></div>
+				    <div class="swiper-slide"><img src="img/s6.jpg"/></div>
+				  </div>
+				  <div class="swiper-pagination"></div>
+				</div>
+				<div id="icons">
+					<ul>
+						<li><a href="#"><img src="img/a1.png"/><p>天猫</p></a></li>
+						<li><a href="#"><img src="img/a2.png"/><p>聚划算</p></a></li>
+						<li><a href="#"><img src="img/a3.png"/><p>天猫国际</p></a></li>
+						<li><a href="#"><img src="img/a4.png"/><p>外卖</p></a></li>
+						<li><a href="#"><img src="img/a5.png"/><p>天猫超市</p></a></li>
+						
+					</ul>
+					<ul>
+						<li><a href="#"><img src="img/b1.png"/><p>充值中心</p></a></li>
+						<li><a href="#"><img src="img/b2.png"/><p>飞猪旅行</p></a></li>
+						<li><a href="#"><img src="img/b3.png"/><p>领金币</p></a></li>
+						<li><a href="#"><img src="img/b4.png"/><p>拍卖</p></a></li>
+						<li><a href="#"><img src="img/b5.png"/><p>分类</p></a></li>
+					</ul>
+				</div>
+				<div id="goods">
+					<ul id="goodsList"class="container">
+						
+					</ul>
+				</div>
 			</content>
-			
-			<footer data-role = "footer" id="footer">
-			
+			<footer>
+			<a href="#" class="bottom">
+				<span><img src="img/home-active.png"/></span>
+				<p style="color: #ec642b">首页</p>
+			</a>
+			<a href="#" class="bottom">
+				<span><img src="img/message.png"/></span>
+				<p>消息</p>
+			</a>
+			<a href="#" class="bottom">
+				<span><img src="img/cart.png"/></span>
+				<p>购物车</p>
+			</a>
+			<a href="#" class="bottom">
+				<span><img src="img/my.png"/></span>
+				<p>我的淘宝</p>
+			</a>
+			<a href="#" class="bottom">
+				<span><img src="img/settings.png"/></span>
+				<p>设置</p>
+			</a>
 			</footer>
-		</div>
-		
 	</body>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.swiper-container', {
+			autoplay: true,//可选选项，自动滑动
+			loop : true,
+			pagination: {
+    			el: '.swiper-pagination',	
+  			},
+		});
+		$.ajax({
+			type:'get',
+			url:'http://datainfo.duapp.com/shopdata/getGoods.php',
+			dataType:'jsonp',
+			success:function(data){
+				
+				console.log(data)
+				for(var i=0;i<data.length;i++){
+					$('#goodsList').html($('#goodsList').html()+
+						`<li class="col-xs-6" id="`+data[i].goodsID+`">
+							<img src="`+data[i].goodsListImg+`">
+							<p>`+data[i].goodsName+`</p>
+							<span>&yen;&nbsp;`+data[i].price+`</span>
+						</li>`)
+					}
+				$('#goodsList>li').on('click',function(){
+					window.location.href='goodsInf.html#'+this.getAttribute('id');
+				})
+			}
+		});
+		$('#srcinf').click(function(){window.location.href='search.html';});
+	</script>
 </html>
