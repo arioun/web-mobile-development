@@ -8,7 +8,7 @@ $.ajax({
 				console.log(data);
 				for (var i=0;i<data.length;i++) {
 					$('.cart').html($('.cart').html()+
-					`<li class="cart-list `+data[i].goodsID+`">
+					`<li class="cart-list a`+data[i].goodsID+`">
 					<div class="col-xs-1 cart-check"><input type="checkbox"class="checkbox"name="`+data[i].price+`"/></div>
 					<div class="col-xs-5 goods-img"><img src="`+data[i].goodsListImg+`"name="`+data[i].goodsID+`"/></div>
 					<div class="col-xs-6 detail">
@@ -23,7 +23,7 @@ $.ajax({
                     			<li><span id="num-jia" class="num-jia">+</span></li>
                 			</ul></li></ul>
 						</span>
-						<span class="delete"><img src="img/delete.png"/></span>
+						<span class="delete" name="`+data[i].goodsID+`"><img src="img/delete.png"/></span>
 					</div>
 				</li>`
 					);
@@ -61,7 +61,8 @@ window.onload=function(){
             	dataType:'json',
             	data:{userID:userID,goodsID:goodsID,number:input_num.value},
             	success:function(data){
-            		if(parseInt(input_num.value)==0){$('.'+goodsID).remove();}}
+            		if(parseInt(input_num.value)==0){$('.a'+goodsID).remove();}
+            		}
             	});
             }
         }
@@ -73,20 +74,24 @@ window.onload=function(){
             	url:"http://datainfo.duapp.com/shopdata/updatecar.php",
             	dataType:'json',
             	data:{userID:userID,goodsID:input_num.getAttribute('name'),number:input_num.value},
-            	success:function(data){console.log(data);if(parseInt(input_num.value)==0){$('.'+goodsID).remove();}}
+            	success:function(data){
+            		if(parseInt(input_num.value)==0){$('.a'+goodsID).remove();}}
             	});
         }
     $('.delete').click(function(){
-    	 var goodsID = input_num.getAttribute('name');
-        	$.ajax({
+    	var goodsID=this.getAttribute('name');
+    	$.ajax({
             	type:"get",
             	url:"http://datainfo.duapp.com/shopdata/updatecar.php",
             	dataType:'json',
-            	data:{userID:userID,goodsID:input_num.getAttribute('name'),number:0},
-            	success:function(data){$('.'+goodsID).remove();}
+            	data:{userID:userID,goodsID:goodsID,number:0},
+            	success:function(data){
+            		
+            		
+            		window.location.href='cart.html';
+            	}
             	});
-        	
-        })
+    })
 
 	$('#all').click(function(){
 		if ($(this).is(':checked')) {
