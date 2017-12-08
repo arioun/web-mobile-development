@@ -7,29 +7,16 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<style type="text/css">
-			*{margin: 0;padding: 0;}
-			a{text-decoration: none;color: #000000;}
-			ul li{list-style: none;}
-			body{padding:1.5rem}
-			#head{height:3.5rem; border-bottom: 0.01rem #aaaaaa solid;margin:0 -1.5rem 0 -1.5rem;}
-			.back{padding-left: 1.5rem;}
-			.backimg{width: 2rem;height: 2rem;}
-			.right{position: fixed;right: 2rem;top: 1.9rem;font-size: large;}
-			h2{text-align: center; margin: -3rem 0 0 0;}
-			#content{padding: 1.5rem;}
-			.logo{text-align: center;margin: 1rem 0 4rem 0;}
-			.logo img{width: 9rem;height: 9rem;}
-			.logsin a{margin-bottom: 2rem;}
-		</style>
+		<script src="js/signup.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/signup.css"/>
 	</head>
 	<body>
 		<header id="head">
-				<a href="open.html"class="btn back"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
+				<a href="open.html"class="btn back" rel="external"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
 				<h2>注册</h2>
 				<a href="#" class="right">帮助</a>
-			</header>
-			<content id='content'>
+		</header>
+		<content id='content'>
 				<div class="logo">
 					<img src="img/uik_nav_home_selected.png"/>
 				</div>
@@ -43,59 +30,14 @@
     				<input type="password" class="form-control" id="pwd" placeholder="请输入密码">
 				</div>
 				
-				<a href="#" class="btn btn-warning btn-lg btn-block"role="button"id="buton">登录</a>
-			</content>
+				<a href="#" class="btn btn-warning btn-lg btn-block"role="button"id="buton">注册</a>
+		</content>
+		<div id="myModal"class="modal fade">
+		<div class="modal-dialog">
+        	<div class="modal-content">
+          	<div class="modal-body">
+          		注册成功
+        	</div></div></div>
+		</div>
 	</body>
-	<script type="text/javascript">
-		$('#fname').blur(function(){
-			var uid = $('#fname').val();
-				$.ajax({
-				type:"get",
-				url:"http://datainfo.duapp.com/shopdata/getuser.php",
-				data:{userID:uid},
-				dataType:'jsonp',
-				success:function(data){
-					if(data == 0)
-					{
-						$('#uidtest').html('用户名可用');
-					}
-					
-					else
-					{
-						$('#uidtest').html('用户名不可用');
-					}			
-				}
-			});
-		})
-		$('#fname').focus(function(){
-			$('#uidtest').html('');
-		})
-		$('#buton').click(function(){
-				var uid = $('#fname').val();
-				var pwd = $('#pwd').val();
-				$.ajax({
-				type:"get",
-				url:"https://datainfo.duapp.com/shopdata/userinfo.php",
-				data:{status:'register',userID:uid,password:pwd},
-				dataType:'json',
-				success:function(data){
-					
-					if(data==1)
-					{
-						alert('注册成功');
-						$(location).attr('href','login.html');
-					}
-					else if(data == 0)
-					{
-						$('#uidtest').html('用户名重复');
-					}
-					
-					else if(data == 2)
-					{
-						alert('数据库报错');
-					}			
-				}
-			});
-			})
-	</script>
 </html>

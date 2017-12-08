@@ -10,10 +10,11 @@
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/swiper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/goodsInf.js"></script>
 	</head>
 	<body>
 		<header>
-			<a href="index.html"><img src="img/round_left_fill.png"/></a>
+			<a href="index.html" rel="external"><img src="img/round_left_fill.png"/></a>
 		</header>
 		<content>
 			<div class="swiper-container">
@@ -27,7 +28,7 @@
 			<span id="price"></span>
 			<div id="some"class="container">
 				<p class="col-xs-4" style="text-align: left;">快递：免运费</p>
-				<p id="xiaoliang"class="col-xs-4"style="text-align: center;"></p>
+				<p class="col-xs-4"style="text-align: center;">总共销售<span id="xiaoliang"></span>件</p>
 				<p class="col-xs-4"style="text-align: right;">浙江杭州</p>
 			</div>
 			<div id="detail">
@@ -41,9 +42,9 @@
 					<img src="img/wang.png"/>
 					<p>旺旺</p>
 				</a>
-				<a href="#" class="bicon">
-					<img src="img/shop.png"/>
-					<p>店铺</p>
+				<a href="cart.html" class="bicon" rel="external">
+					<img src="img/cart-s.png"/>
+					<p>购物车</p>
 				</a>
 				<a href="#" class="bicon">
 					<img src="img/favor_light.png"/>
@@ -57,43 +58,12 @@
 				</div>
 			</div>
 		</footer>
+		<div id="myModal"class="modal fade">
+		<div class="modal-dialog">
+        	<div class="modal-content">
+          	<div class="modal-body">
+          		添加成功
+        	</div></div></div>
+		</div>
 	</body>
-	<script type="text/javascript">
-		var goodsID=window.location.hash.slice(1);
-		$.ajax({
-			type:"get",
-			url:" http://datainfo.duapp.com/shopdata/getGoods.php",
-			dataType:"jsonp",
-			data:{goodsID:goodsID},
-			success:function(data){
-				var detail = data[0].detail.split('。');
-				var imgsUrl = data[0].imgsUrl.replace(/"/g,'').replace('[','').replace(']','').split(',');
-				var goodsBenUrl = data[0].goodsBenUrl.replace(/"/g,'').replace('[','').replace(']','').split(',');
-				console.log(imgsUrl);
-				for (var i=0;i<goodsBenUrl.length;i++) {
-					$('.swiper-wrapper').html($('.swiper-wrapper').html()+
-						`<div class="swiper-slide"><img src="`+goodsBenUrl[i]+`"/></div>`);};
-				$('#listname').html(`<h4>`+data[0].goodsName+`</h4>`);
-				$('#price').html(`&yen;&nbsp;`+data[0].price);
-				$('#xiaoliang').html(`总共销售`+data[0].buynumber+`笔`);
-				for (var i = 0;i<detail.length;i++) {
-					$('#goodsinfo').html($('#goodsinfo').html()+
-					`<li>`+detail[i]+`</li>`);};
-				for (var i =0;i<imgsUrl.length;i++) {
-					$('#imgshow').html($('#imgshow').html()+
-					`<img src ="`+imgsUrl[i]+`">`);};
-				
-				var mySwiper = new Swiper('.swiper-container', {
-					autoplay: false,//可选选项，自动滑动
-					loop : true,
-					pagination: {
-    						el: '.swiper-pagination',	
-  						},
-					});
-			}
-		});
-	</script>
-	<script type="text/javascript">
-		
-	</script>
 </html>

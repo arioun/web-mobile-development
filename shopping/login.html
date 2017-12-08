@@ -8,10 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="css/open.css"/>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/login.js"></script>
 	</head>
 	<body>
 		<header id="head">
-				<a href="open.html"class="btn back"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
+				<a href="open.html"class="btn back" rel="external"><img src="img/tb_icon_actionbar_back.png" alt="back"class="backimg"/></a>
 				<a href="#" class="right">帮助</a>
 			</header>
 			<content id='content'>
@@ -31,36 +32,12 @@
 				
 				<a href="#" class="btn btn-warning btn-lg btn-block"role="button"id="buton">登录</a>
 			</content>
+			<div id="myModal"class="modal fade">
+		<div class="modal-dialog">
+        	<div class="modal-content">
+          	<div class="modal-body">
+          		登录成功
+        	</div></div></div>
+		</div>
 	</body>
-	<script type="text/javascript">
-		$('#fname').focus(function(){
-			$('#uidtest').html('');
-		})
-		$('#pwd').focus(function(){
-			$('#pwdtest').html('');
-		})
-		$('#buton').click(function(){
-				var id = $('#fname').val();
-				var pwd = $('#pwd').val();
-				$.ajax({
-				type:"get",
-				url:"https://datainfo.duapp.com/shopdata/userinfo.php",
-				data:{status:'login',userID:id,password:pwd},
-				dataType:'json',
-				success:function(data){
-					if(data == 0){
-					$('#uidtest').html('用户名不存在');
-				}
-				else if(data == 2){
-					$('#pwdtest').html('密码错误');
-				}
-				else{
-					alert('登录成功');
-					$(location).attr('href', 'index.html');
-				}
-				}
-			});
-			})
-		
-	</script>
 </html>

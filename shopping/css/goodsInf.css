@@ -1,5 +1,5 @@
 *{margin: 0 auto;padding: 0;}
-ul li{list-style: none;}
+ul,li{list-style: none;}
 a{text-decoration: none;color: #000000;}
 h4{color: #000000;font-family: Helvetica Neue;}
 p{color: #000000;font-family: Helvetica Neue;}

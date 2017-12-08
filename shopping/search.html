@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/search.js"></script>
 	</head>
 	<body>
 		<header>
@@ -19,7 +20,7 @@
 					</div>
 				</div>
 				<div class="bar-right col-xs-2">
-					<a href="index.html"><img src="img/home.png"/></a>
+					<a href="index.html" rel="external"><img src="img/home.png"/></a>
 				</div>
 			</div>
 		</header>
@@ -31,28 +32,4 @@
 			</div>
 		</content>
 	</body>
-	<script type="text/javascript">
-		$('#srcbtn').click(function(){
-			var srcinf = encodeURI($('#srcinf').val());
-			console.log(srcinf)
-			$.ajax({
-				type:"get",
-				url:"http://datainfo.duapp.com/shopdata/selectGoodes.php",
-				dataType:'jsonp',
-				data:{selectText:srcinf},
-				success:function(data){
-					var goodsID = data[0].goodsID;
-					$('#goodsList').html(
-						`<li class="col-xs-6" id="`+goodsID+`">
-							<img src="`+data[0].goodsListImg+`">
-							<p>`+data[0].goodsName+`</p>
-							<span>&yen;&nbsp;`+data[0].price+`</span>
-						</li>`)
-					$('#goodsList>li').on('click',function(){
-					window.location.href='goodsInf.html#'+this.getAttribute('id');
-				})
-				}
-			});
-		})
-	</script>
 </html>
