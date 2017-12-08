@@ -12,9 +12,9 @@ $.ajax({
 					<div class="col-xs-1 cart-check"><input type="checkbox"class="checkbox"name="`+data[i].price+`"/></div>
 					<div class="col-xs-5 goods-img"><img src="`+data[i].goodsListImg+`"name="`+data[i].goodsID+`"/></div>
 					<div class="col-xs-6 detail">
-						<h5>`+data[i].goodsName+`</h5>
-						<span class="price">&yen;`+data[i].price+`</span>
-						<span class="num">
+						<h5 class="col-xs-12">`+data[i].goodsName+`</h5>
+						
+						<span class="num col-xs-12">
 							<ul class="btn-numbox">
             				<li><span class="number">数量</span></li>
             				<li><ul class="count">
@@ -23,7 +23,8 @@ $.ajax({
                     			<li><span id="num-jia" class="num-jia">+</span></li>
                 			</ul></li></ul>
 						</span>
-						<span class="delete" name="`+data[i].goodsID+`"><img src="img/delete.png"/></span>
+						<span class="price col-xs-6">&yen;`+data[i].price+`</span>
+						<span class="delete col-xs-6" name="`+data[i].goodsID+`"><img src="img/delete.png"/></span>
 					</div>
 				</li>`
 					);
