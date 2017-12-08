@@ -1,0 +1,26 @@
+*{margin: 0 auto;padding: 0;}
+ul,li{list-style: none;}
+a{text-decoration: none;color: #000000;}
+h4{color: #000000;font-family: Helvetica Neue;}
+p{color: #000000;font-family: Helvetica Neue;}
+
+header{position: absolute;left: 0;z-index: 8;}
+
+/*content*/
+.swiper-slide img{width:100%;height:35rem;}
+#s12{width: 100%;height: 4.5rem;}
+#listname{margin:  1rem 1.2rem 0 1.2rem;}
+#listname h4{line-height:20px;}
+#price{color: #ff5000;font-size: 23px;font-weight: bold;margin-left: 1.3rem;}
+#some{padding:0;margin:  1rem 1rem 0 1rem;}
+#some p{display: inline;padding: 0;color: #999;}
+#detail{border-top:1rem #eeeeee solid;margin-bottom: 6rem;}
+#imgshow img{width: 100%;height: 30rem;}
+footer{position: fixed;left: 0;bottom: 0;z-index: 8;}
+#bottom{display: flex;height: 5rem;width: 100%;background: #fff;text-align: center;}
+.bicon{width: 5rem;border-right: 0.2rem solid #eee;border-top:0.2rem solid #eee;
+		margin:0.2rem 0 0 0;}
+#joincart{background-color: #ff9402;width: 10.5rem;}
+#joincart p{color: #fff;font-size:18px;margin-top: 1.5rem;font-family: "微软雅黑";}
+#buy{background-color: #ff5000;width: 9.5rem;}
+#buy p{color: #fff;font-size:18px;margin-top: 1.5rem;font-family: "微软雅黑";}
