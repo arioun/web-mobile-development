@@ -114,8 +114,7 @@ window.onload=function(){
 					s += Number(p)*input_num.value;
 				} else{
 					s += Number(p);
-				}
-				
+				}	
 			}
 		})
 		$("#allprice").text(s);
