@@ -1,0 +1,13 @@
+*{margin: 0;padding: 0;}
+a{text-decoration: none;color: #000000;}
+ul li{list-style: none;}
+body{padding: 1.5rem;}
+
+	.backimg{width: 2rem;height: 2rem;}
+	.left{padding:0!important;text-align: left;}
+	.right{font-size: large;padding:0!important;text-align: right;}
+	.mid{padding:0!important;text-align: center;font-size:25px;}
+	.logo{text-align: center;margin: 3rem 0 4rem 0;}
+	.logo img{width: 9rem;height: 9rem;}
+	.logsin a{margin-bottom: 2rem;}
+
