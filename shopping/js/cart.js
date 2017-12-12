@@ -1,4 +1,5 @@
 var userID = localStorage.getItem('userID');
+
 $.ajax({
 			type:'get',
 			url:'http://datainfo.duapp.com/shopdata/getCar.php',
@@ -35,13 +36,17 @@ $.ajax({
 			}
 });
 window.onload=function(){
-	
+	if(userID == null){
+    	$('#myModal').modal('show');
+    	setTimeout("$(location).attr('href', 'open.html')",1000);
+	}
 	var num_jia = document.getElementById("num-jia");
     var num_jian = document.getElementById("num-jian");
     var input_num = document.getElementById("input-num");
     
     num_jia.onclick = function() {
             input_num.value = parseInt(input_num.value) + 1;
+            getPrice();
             $.ajax({
             	type:"get",
             	url:"http://datainfo.duapp.com/shopdata/updatecar.php",
@@ -53,16 +58,19 @@ window.onload=function(){
     num_jian.onclick = function() {
         var goodsID = input_num.getAttribute('name');	
             if(input_num.value <= 0) {
-                input_num.value = 0;}
+                input_num.value = 0;
+            	
+            }
             else {
                 input_num.value = parseInt(input_num.value)-1;
+                getPrice();
                 $.ajax({
             	type:"get",
             	url:"http://datainfo.duapp.com/shopdata/updatecar.php",
             	dataType:'json',
             	data:{userID:userID,goodsID:goodsID,number:input_num.value},
             	success:function(data){
-            		if(parseInt(input_num.value)==0){$('.a'+goodsID).remove();}
+            		if(parseInt(input_num.value)==0){$('.a'+goodsID).remove();getPrice();}
             		}
             	});
             }

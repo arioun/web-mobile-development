@@ -6,9 +6,12 @@
 		<meta name="viewport" content="width = device-width,initial-scale=1"/>
 		<link rel="stylesheet" type="text/css" href="css/setting.css"/>
 		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="shortcut icon" href="img/taobao.png" />
 		<script src="js/jquery-2.2.2.js"></script>
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/setting.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 	</head>
 	<body>
 		<div data-role = "page"id="page">
@@ -36,9 +39,16 @@
 				<li><a href="#">关于手机淘宝</a></li>
 			</div>
 		</div>
-		<footer data-role = "footer" data-position = "fixed">
-			<a href="#" id="exit"><h2>退出当前账户</h2></a>
-		</footer>
+		<div data-role = "footer" data-position = "fixed"class="footer">
+			<a href="#" id="exit"><p>退出当前账户</p></a>
+		</div>
+		</div>
+		<div id="myModal"class="modal fade">
+		<div class="modal-dialog">
+        	<div class="modal-content">
+          	<div class="modal-body">
+          		你还未登录
+        	</div></div></div>
 		</div>
 	</body>
 </html>

@@ -5,6 +5,7 @@ p{color: #000000;}
 #page{background-color: #f9f9f9!important;}
 .header{height: 4rem;background-color: #f7f7f7!important;}
 .header a{padding: 0!important;border:0!important; background-color: #f7f7f7!important;}
+.header h1{font-size: 30px;}
 .content{padding: 0!important;}
 #list{margin: 0;}
 #list{border-bottom: ;}
@@ -15,7 +16,7 @@ p{color: #000000;}
 .touxiang{float: left;}
 #first a{padding: 0 0 0 0;}
 .inf{position: relative;left: 0.5rem;top: 0.5rem;}
-footer{text-align: center;border: 0!important;}
-footer h2{color: #fff;font-weight: lighter;}
-footer a{margin: 0!important;border: 0!important; width: 100%;height: 100%;
+.footer{text-align: center;border: 0!important;}
+#exit p{color: #fff;font-weight:normal;font-size: 16px;margin:0;}
+.footer a{margin: 0!important;border: 0!important; width: 100%;height: 100%;
 		background-color: #ec642b!important;}
