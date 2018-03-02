@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title>cart</title>
-		<meta name="viewport" content="width = device-width,initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="css/cart.css"/>
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<title>购物车</title>
+		<meta name="viewport" content="width = device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/cart.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 		<link rel="shortcut icon" href="img/taobao.png" />
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/cart.js"></script>
 	</head>
+
 	<body>
 		<div id="head">
-			<a href="index.html" class="btn back"rel="external"><img src="img/back_light.png"/></a>
+			<a href="index.html" class="btn back" rel="external"><img src="img/back_light.png" /></a>
 			<h3>购物车</h3>
 		</div>
 		<div id="content">
 			<ul class="cart"></ul>
 		</div>
-		<div id="foot">
+		<div id="foot"class="col-xs-12">
 			<div class="col-xs-4 checkall">
-				<input type="checkbox"id="all"name="0"/>&nbsp;全选
+				<input type="checkbox" id="all" name="0" />&nbsp;全选
 			</div>
 			<div class="col-xs-5 count">合计：&nbsp;<span style="color: red;">&yen;&nbsp;</span><span id="allprice">0</span></div>
 			<button class="col-xs-3 btn">结算</button>
 		</div>
-		<div id="myModal"class="modal fade">
-		<div class="modal-dialog">
-        	<div class="modal-content">
-          	<div class="modal-body">
-          		你还未登录
-        	</div></div></div>
+		<div id="myModal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						你还未登录
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
+
 </html>

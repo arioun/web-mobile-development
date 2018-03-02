@@ -1,0 +1,37 @@
+{
+	"index.html": {
+		"refer": [
+			"begin.html",
+			"setting.html",
+			"cart.html",
+			"search.html"
+		]
+	},
+	"begin.html": {
+		"refer": [
+			"open.html"
+		]
+	},
+	"open.html": {
+		"refer": [
+			"login.html",
+			"begin.html"
+		]
+	},
+	"setting.html": {
+		"refer": [
+			"open.html",
+			"index.html"
+		]
+	},
+	"cart.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"search.html": {
+		"refer": [
+			"index.html"
+		]
+	}
+}

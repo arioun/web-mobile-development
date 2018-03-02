@@ -1,12 +1,8 @@
 $(document).ready(function(){
-	if(localStorage.getItem('userID')!=null)
-	{
-		window.location.href="index.html";
-	}
-	else if(localStorage.getItem('animation')=='looked'){
+	if(localStorage.getItem('animation')=='looked'){
 		window.location.href="open.html";
 	}
-})
+});
 window.onload=function(){
 	var mySwiper = new Swiper('.swiper-container', {
 	//autoplay: true,//可选选项，自动滑动
