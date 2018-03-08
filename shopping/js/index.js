@@ -1,7 +1,7 @@
 $(document).ready(function() {
-	if(localStorage.getItem('animation') == null) {
-		window.location.href = "begin.html";
-	}
+	//if(localStorage.getItem('animation') == null) {
+	//	window.location.href = "begin.html";
+	//}
 	$.ajax({
 		type: 'get',
 		url: 'http://datainfo.duapp.com/shopdata/getGoods.php',

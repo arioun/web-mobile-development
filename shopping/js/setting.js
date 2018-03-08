@@ -1,9 +1,9 @@
 window.onload = function() {
 	var userID = localStorage.getItem('userID');
-	if(userID == null) {
-		$('#myModal').modal('show');
-		setTimeout("$(location).attr('href', 'open.html')", 1000);
-	}
+	//if(userID == null) {
+	//	$('#myModal').modal('show');
+	//	setTimeout("$(location).attr('href', 'open.html')", 1000);
+	//}
 	else{
 		$('.inf').html(
 			`<h2>`+userID+`</h2>

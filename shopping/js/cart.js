@@ -39,10 +39,10 @@ $.ajax({
 });
 
 window.onload = function() {
-	if(userID == null) {
-		$('#myModal').modal('show');
-		setTimeout("$(location).attr('href', 'open.html')", 1000);
-	};
+	//if(userID == null) {
+	//	$('#myModal').modal('show');
+	//	setTimeout("$(location).attr('href', 'open.html')", 1000);
+	//};
 	for (var i=0;i<sessionStorage.getItem('length');i++) {
 		console.log(document.getElementById("input-num"+i).value);
 		document.getElementById("num-jia"+i).onclick= function() {
