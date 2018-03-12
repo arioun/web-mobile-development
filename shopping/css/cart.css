@@ -134,12 +134,11 @@ body {
 	color: #333border-left: 0;
 	border-right: 0;
 }
-.deletespan{margin-top: 0.5rem;
-	text-align: right;
-	padding: 0!important;}
+
 .delete {
-	
-	
+	margin-top: 0.5rem;
+	text-align: right;
+	padding: 0!important;
 }
 
 #foot {

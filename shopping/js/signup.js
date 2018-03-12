@@ -36,7 +36,7 @@ window.onload = function() {
 		} else if(pwd == pwds) {
 			$.ajax({
 				type: "get",
-				url: "https://datainfo.duapp.com/shopdata/userinfo.php",
+				url: "http://datainfo.duapp.com/shopdata/userinfo.php",
 				data: {
 					status: 'register',
 					userID: uid,

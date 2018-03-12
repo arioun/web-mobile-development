@@ -10,7 +10,7 @@ window.onload = function() {
 		var pwd = $('#pwd').val();
 		$.ajax({
 			type: "get",
-			url: "https://datainfo.duapp.com/shopdata/userinfo.php",
+			url: "http://datainfo.duapp.com/shopdata/userinfo.php",
 			data: {
 				status: 'login',
 				userID: id,

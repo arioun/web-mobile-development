@@ -8,7 +8,6 @@ $.ajax({
 	},
 	success: function(data) {
 		console.log(data);
-		sessionStorage.setItem('length',data.length);
 		for(var i = 0; i < data.length; i++) {
 			$('.cart').html($('.cart').html() +
 				`<li class="cart-list a` + data[i].goodsID + `">
@@ -21,13 +20,13 @@ $.ajax({
 							<ul class="btn-numbox">
             				<li><span class="number">数量</span></li>
             				<li><ul class="count">
-                    			<li><span id="num-jian`+i+`" class="num-jian">-</span></li>
-                    			<li><input type="text" class="input-num" id="input-num`+i+`" value="` + data[i].number + `"name="` + data[i].goodsID + `"/></li>
-                    			<li><span id="num-jia`+i+`" class="num-jia">+</span></li>
+                    			<li><span id="num-jian" class="num-jian">-</span></li>
+                    			<li><input type="text" class="input-num" id="input-num" value="` + data[i].number + `"name="` + data[i].goodsID + `"/></li>
+                    			<li><span id="num-jia" class="num-jia">+</span></li>
                 			</ul></li></ul>
 						</span>
 						<span class="price col-xs-6">&yen;` + data[i].price + `</span>
-						<span class="col-xs-6 deletespan"><a class="delete" name="` + data[i].goodsID + `"><img src="img/delete.png"/></a></span>
+						<span class="delete col-xs-6" name="` + data[i].goodsID + `"><img src="img/delete.png"/></span>
 					</div>
 				</li>`
 			);
@@ -39,14 +38,16 @@ $.ajax({
 });
 
 window.onload = function() {
-	//if(userID == null) {
-	//	$('#myModal').modal('show');
-	//	setTimeout("$(location).attr('href', 'open.html')", 1000);
-	//};
-	for (var i=0;i<sessionStorage.getItem('length');i++) {
-		console.log(document.getElementById("input-num"+i).value);
-		document.getElementById("num-jia"+i).onclick= function() {
-		document.getElementById("input-num"+i).getAttribute("value") = 3;
+	if(userID == null) {
+		$('#myModal').modal('show');
+		setTimeout("$(location).attr('href', 'open.html')", 1000);
+	}
+	var num_jia = document.getElementById("num-jia");
+	var num_jian = document.getElementById("num-jian");
+	var input_num = document.getElementById("input-num");
+
+	num_jia.onclick = function() {
+		input_num.value = parseInt(input_num.value) + 1;
 		getPrice();
 		$.ajax({
 			type: "get",
@@ -54,21 +55,21 @@ window.onload = function() {
 			dataType: 'json',
 			data: {
 				userID: userID,
-				goodsID: document.getElementById("input-num"+i).getAttribute('name'),
-				number: document.getElementById("input-num"+i).value
+				goodsID: input_num.getAttribute('name'),
+				number: input_num.value
 			},
 			success: function(data) {
 				console.log(data);
 			}
 		});
 	}
-	document.getElementById("num-jian"+i).onclick = function() {
-		var goodsID = document.getElementById("input-num"+i).getAttribute('name');
-		if(document.getElementById("input-num"+i).value <= 0) {
-			document.getElementById("input-num"+i).value = 0;
+	num_jian.onclick = function() {
+		var goodsID = input_num.getAttribute('name');
+		if(input_num.value <= 0) {
+			input_num.value = 0;
 
 		} else {
-			document.getElementById("input-num"+i).value = parseInt(document.getElementById("input-num"+i).value) - 1;
+			input_num.value = parseInt(input_num.value) - 1;
 			getPrice();
 			$.ajax({
 				type: "get",
@@ -77,10 +78,10 @@ window.onload = function() {
 				data: {
 					userID: userID,
 					goodsID: goodsID,
-					number: document.getElementById("input-num"+i).value
+					number: input_num.value
 				},
 				success: function(data) {
-					if(parseInt(document.getElementById("input-num"+i).value) == 0) {
+					if(parseInt(input_num.value) == 0) {
 						$('.a' + goodsID).remove();
 						getPrice();
 					}
@@ -88,29 +89,25 @@ window.onload = function() {
 			});
 		}
 	}
-	document.getElementById("input-num"+i).onchange = function() {
-		document.getElementById("input-num"+i).value = parseInt(document.getElementById("input-num"+i).value);
-		var goodsID = document.getElementById("input-num"+i).getAttribute('name');
+	input_num.onchange = function() {
+		input_num.value = parseInt(input_num.value);
+		var goodsID = input_num.getAttribute('name');
 		$.ajax({
 			type: "get",
 			url: "http://datainfo.duapp.com/shopdata/updatecar.php",
 			dataType: 'json',
 			data: {
 				userID: userID,
-				goodsID: document.getElementById("input-num"+i).getAttribute('name'),
-				number: document.getElementById("input-num"+i).value
+				goodsID: input_num.getAttribute('name'),
+				number: input_num.value
 			},
 			success: function(data) {
-				if(parseInt(document.getElementById("input-num"+i).value) == 0) {
+				if(parseInt(input_num.value) == 0) {
 					$('.a' + goodsID).remove();
 				}
 			}
 		});
 	}
-	} //for
-	
-	
-	
 	$('.delete').click(function() {
 		var goodsID = this.getAttribute('name');
 		$.ajax({
