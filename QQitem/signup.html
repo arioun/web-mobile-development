@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<meta name="viewport" content="width = device-width,initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+		<script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		<style type="text/css">
+			a{text-decoration: none;}
+			#head{background-color: #5db5f8;height: 4rem;}
+			#logo{text-align: center;margin-top: 0.5rem;}
+			#foot p{text-align: center;font-weight: lighter;}
+		</style>
+		
+	</head>
+	<body>
+		<div data-role = "header" id="head">
+			<div id="logo"><img src="img/imlogo_b.png"/></div>
+		</div>
+		<div data-role = "content">
+			<form action="demoform.asp" action="post">
+				<label for="fname">账号</label>
+				<input type="text" name="fname" id="fname"/>
+				<div id="usertx"></div>
+				<label for="fpassword">密码</label>
+				<input type="password" name="fpassword" id="fpassword"/>
+				<a href="https://ssl.zc.qq.com/chs/agreement1_chs.html"target="_blank">查看用户协议</a>
+				<input type="button" value="同意协议并注册" id="btn"/>
+			</form>
+		</div>
+		<div data-role = "footer"data-position = "fixed" id="foot">
+			<p>Copyright&copy;Tencent. All Rights Reserved.</p>
+			
+		</div>
+		<script type="text/javascript">
+			$('#fname').mouseleave(function(){
+				var uid = $('#fname').val();
+				$.ajax({
+				type:"get",
+				url:"http://datainfo.duapp.com/shopdata/getuser.php",
+				data:{userID:uid},
+				dataType:'jsonp',
+				success:function(data){
+					if(data == 0)
+					{
+						$('#usertx').html('用户名可用');
+					}
+					
+					else
+					{
+						alert('用户名不可用');
+					}			
+				}
+			});
+			})
+			
+			$('#btn').click(function(){
+				var uid = $('#fname').val();
+				var pwd = $('#fpassword').val();
+				$.ajax({
+				type:"get",
+				url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+				data:{status:'register',userID:uid,password:pwd},
+				dataType:'json',
+				success:function(data){
+					
+					if(data==1)
+					{
+						alert('注册成功');
+						$(location).attr('href','login.html');
+					}
+					else if(data == 0)
+					{
+						alert('用户名重名');
+					}
+					
+					else if(data == 2)
+					{
+						alert('数据库报错');
+					}			
+				}
+			});
+			})
+		</script>
+	</body>
+</html>

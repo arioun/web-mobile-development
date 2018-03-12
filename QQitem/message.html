@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>消息</title>
+		<meta name="viewport" content="width = device-width,initial-scale=2"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+		<link rel="stylesheet" href="css/messagecss.css" />
+		<script type="text/javascript" src="js/jquery-2.2.2.js"></script>
+		<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+		
+	</head>
+	<body>
+		<div data-role = "page" id="pageOne">
+		<div data-role = "header" data-position = "fixed" id="head">
+			<a href="#myPanel"data-role="none"><img src="img/tx.png"class="tx"/> </a>
+			<h1>消息</h1>
+			<a href="#" class="plus"data-shadow = "false"><img src="img/plus-white.png"/></a>
+		</div>
+		<div data-role = "content" class="pgcon">
+			<div data-role = "fieldcontain">
+				<input type="search" name="search" id="search" value="搜索" />
+			</div>
+			<ul data-role = "listview" class="item">
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+				<li data-icon = "false">
+					<a href="#">
+						<div class="touxiang1"><img src="img/tx.png"class="tx"/></div>
+						<h2>jQuery-mobile</h2>
+						<p>jquerymobilelist</p>
+						<span class="ui-li-count">3</span>
+					</a>
+				</li>
+			</ul>
+		</div><!--content-->
+		<div data-role = "footer" data-position = "fixed">
+			<div class="bt">
+				<a href="#" data-role = "button" data-inline = "true"data-icon = "home"data-iconpos = "notext"></a>
+				<br /> <span>消息</span>
+			</div>
+			<div class="bt">
+				<a href="#pageTwo"data-transition = "slidefade" data-role = "button" data-inline = "true"data-icon = "grid"data-iconpos = "notext"></a>
+				<br /> <span>联系人</span>
+			</div>
+			<div class="bt">
+				<a href="#pageThree"data-transition = "slidefade" data-role = "button" data-inline = "true"data-icon = "star"data-iconpos = "notext"></a>
+				<br /> <span>动态</span>
+			</div>
+		</div><!--footer-->
+		<div data-role = "panel" id="myPanel">
+			<div class="ui-panel-inner" id="panelinner">
+				<div id="panelhead">
+					<a href="#"data-role = "button" data-icon="calendar"data-iconpos="notext" class="daka">打卡</a>
+					<div id="paneltx"><img src="img/tx.png"/class="tx"><span>Jquery-mobile</span></div>
+				</div>
+				<div id="panelcontent">
+					<ul data-role = "listview" data-icon = "false" id="panelul">
+					<li><a href="#" data-role = "button" data-icon = "star" data-shadow = "false">激活会员</a></li>
+					<li><a href="#" data-role = "button" data-icon = "shop" data-shadow = "false">QQ钱包</a></li>
+					<li><a href="#" data-role = "button" data-icon = "user" data-shadow = "false">个性装扮</a></li>
+					<li><a href="#" data-role = "button" data-icon = "heart" data-shadow = "false">我的收藏</a></li>
+					<li><a href="#" data-role = "button" data-icon = "grid" data-shadow = "false">我的相册</a></li>
+					<li><a href="#" data-role = "button" data-icon = "mail" data-shadow = "false">我的文件</a></li>
+				</ul>
+				</div>
+				
+					<div data-role = "controlgroup" data-type = "horizontal" class="panelfoot">
+						<a href="#"data-role = "button"data-icon = "gear">设置</a>
+						<a href="#pageOne" data-role = "button" data-transition = "slide" 
+							data-rel = "close"data-icon = "back">
+							关闭</a>
+						<a href="#"data-role = "button"data-icon = "eye">夜间</a>
+					</div>	
+			</div><!--panelinner-->
+		</div><!--panel-->
+		</div><!--pageong-->
+		
+		<div data-role = "page" id="pageTwo">
+			<div data-role = "header" data-position = "fixed" id="head">
+				<a href="#myPanel"data-role="none"><img src="img/tx.png"class="tx"/> </a>
+				<h1>消息</h1>
+				<a href="#" data-role = "none"><span id="add">
+					添加
+				</span></a>
+			</div><!--header-->
+			<div data-role = "content"class="pgcon">
+				<div data-role="fieldcontain" class="search1">
+					<input type="search" name="search" id="search" value="搜索" />
+				</div><!--search-->
+				<div>
+					<ul data-role="listview" class="item">
+					<li><a href="#"class="ui-nodisc-icon ui-alt-icon"><h3>新朋友</h3></a></li>
+				</ul>
+				</div>
+				<nav>
+					
+                    
+                        <ul>
+                            <li class="sp">好友</li>
+                            <li>群</li>
+                            <li>多人聊天</li>
+                            <li>设备</li>
+                            <li>通讯录</li>
+                            <li>公众号</li>
+                        </ul>                  
+                   
+                     
+				</nav>
+				<div data-role = "main">
+					<div data-role="collapsible"class="zhankai ui-nodisc-icon ui-alt-icon"data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+						<h1>特别关心</h1>
+							<ul data-role="listview" class="item">
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible"class="zhankai ui-nodisc-icon ui-alt-icon"data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+						<h1>我的好友</h1>
+						<ul data-role="listview" class="item">
+						<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div data-role="collapsible"class="zhankai ui-nodisc-icon ui-alt-icon"data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+						<h1>黑名单</h1>
+						<ul data-role="listview" class="item">
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+							<li data-icon="false">
+								<a href="#">
+									<div class="touxiang1"><img src="img/tx.png" class="tx" /></div>
+									<h2>jQuery-mobile</h2>
+									<p>[4G在线]jquerymobilelist</p>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div><!--content-->
+			<div data-role="footer" data-position="fixed">
+				<div class="bt">
+					<a href="#pageOne"data-transition = "slidefade"data-direction="reverse" data-role="button" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+					<br /> <span>消息</span>
+				</div>
+				<div class="bt">
+					<a href="#pageTwo" data-role="button" data-inline="true" data-icon="grid" data-iconpos="notext"></a>
+					<br /> <span>联系人</span>
+				</div>
+				<div class="bt">
+					<a href="#pageThree"data-transition = "slidefade"data-role="button" data-inline="true" data-icon="star" data-iconpos="notext"></a>
+					<br /> <span>动态</span>
+				</div>
+			</div><!--footer-->
+		</div><!--pageTwo-->
+		
+		<div data-role = "page" id="pageThree">
+			<div data-role = "header" data-position = "fixed" id="head">
+				<a href="#myPanel"data-role="none"><img src="img/tx.png"class="tx"/> </a>
+				<h1>消息</h1>
+				<a href="#" data-role = "none"><span id="add">
+					更多
+				</span></a>
+			</div><!--header-->
+			<div data-role="fieldcontain" class="search1">
+					<input type="search" name="search" id="search" value="搜索" />
+				</div><!--search-->
+			<div data-role = "content" class="pgcon">
+				<ul class="dongtai">
+					<li><a href="#"><img src="img/Qzone.png"/><p>好友动态</p></a></li>
+					<li><a href="#"><img src="img/fj.png"/><p>附近</p></a></li>
+					<li><a href="#"><img src="img/buluo.png"/><p>兴趣部落</p></a></li>
+				</ul>
+			</div><!--content-->
+			<div data-role="footer" data-position="fixed">
+				<div class="bt">
+					<a href="#pageOne"data-transition = "slidefade"data-direction = "reverse" data-role="button" data-inline="true" data-icon="home" data-iconpos="notext"></a>
+					<br /> <span>消息</span>
+				</div>
+				<div class="bt">
+					<a href="#pageTwo"data-transition = "slidefade"data-direction = "reverse" data-role="button" data-inline="true" data-icon="grid" data-iconpos="notext"></a>
+					<br /> <span>联系人</span>
+				</div>
+				<div class="bt">
+					<a href="#pageThree" data-role="button" data-inline="true" data-icon="star" data-iconpos="notext"></a>
+					<br /> <span>动态</span>
+				</div>
+			</div><!--footer-->
+		</div><!--pageThree-->
+		<script src="js/iscroll.js"></script>
+		<script src="js/navbarscroll.js"></script>
+		<script type="text/javascript">
+    		$(function(){
+       			$('.owrapper').navbarscroll();
+    		})
+		</script>
+	</body>
+</html>

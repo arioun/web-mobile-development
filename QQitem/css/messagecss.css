@@ -1,0 +1,51 @@
+a {text-decoration: none;}
+ul li{list-style: none;}
+*{margin: 0;padding: 0;}
+/*pageone*/
+#pageOne{background-color: #fff;}
+#head{background-color: #5db5f8;height: 4rem;}
+#head h1{color: white;font-size:large;font-weight: lighter;}
+	.tx{width: 2.5rem;height: 2.5rem;}
+	.plus{background-color: #5db5f8!important;border: none;}
+.pgcon{padding: 0;background-color: #fff;}
+	.search1 div{}
+	#search{border-radius:5px solid #ddd;}
+	.touxiang1{float: left;top: 0.2rem;}
+	.item{padding: 1rem;}
+	.item li{border-top: none!important;border-bottom: 0.06rem #dedfe0 solid;}
+	.item li a{background-color: white!important;}
+	.item h2 {position: relative;left: 0.3rem;}
+	.item p{text-align: left;}
+	.bt{float: left;margin: 0 9% 0 12%;}
+#myPanel{}
+#panelhead{background: url(../img/bg.JPG);background-width:30rem; background-height:20rem;
+			height: 10rem;}
+	.daka{margin: 0;position: relative;top: 0.3rem;left: 0.3rem;}
+	#paneltx{position: relative;left: 0.5rem;top: 4.5rem;}
+	#paneltx span{font-size: large;font-weight: bolder;}
+#panelinner{padding: 0!important;}
+#panelcontent{margin: 1rem 0.4rem 0 0;}
+	#panelul li{padding: 0.5rem 0 0 0;}
+	#panelul li a{background-color: white;border: none;}
+.panelfoot{position: fixed;bottom: 0;margin-bottom: 0;}
+
+/*pageTwo*/
+#pageTwo{background-color: #fff;}
+#add{color: #fff;font-size: large;font-weight: lighter;position: relative;top: 0.6rem;}
+nav{margin-top:1rem; border-top:0.01rem #dedfe0 solid;border-bottom:0.01rem #dedfe0 solid;}
+nav ul{padding: 0;margin: 0;}
+nav ul li{display: inline-block;padding: 1rem 0.7rem 1rem 0.7rem; color: #000000;font-weight: normal;}
+.sp{border-bottom: #5db5f8 0.2rem solid;color: #5db5f8;}
+
+.zhankai{margin: 0;}
+.zhankai div{padding: 0;}
+.zhankai a{
+	background-color: transparent!important;
+	border-top: none!important;
+}
+/*pageThree*/
+
+.dongtai{}
+.dongtai li{display: inline-block;padding:  1.5rem 2rem 0 2.5rem;}
+.dongtai li p{color: #000;font-weight: lighter;padding:0.5rem 0 1rem 0;position: relative;left: -0.1rem;}
+.dongtai li img{vertical-align:middle;width: 2.9rem;height: 3rem;}
